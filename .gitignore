@@ -1,0 +1,21 @@
+# Maintainer-local tooling
+.claude/
+CLAUDE.local.md
+
+# Node
+node_modules/
+
+# VS Code extension package
+*.vsix
+.vscode-test/
+
+# Editor
+.DS_Store
+Thumbs.db
+*.swp
+*~
+
+# Secrets
+.env
+.env.*
+!.env.example
