@@ -4,5 +4,64 @@
   "fileTypes": [
     "ofan"
   ],
-  "patterns": []
+  "patterns": [
+    {
+      "include": "#comments"
+    }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "include": "#comment-doc"
+        },
+        {
+          "include": "#comment-block"
+        },
+        {
+          "include": "#comment-line"
+        }
+      ]
+    },
+    "comment-doc": {
+      "name": "comment.block.documentation.ofan",
+      "begin": "###",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.begin.ofan"
+        }
+      },
+      "end": "###",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.end.ofan"
+        }
+      }
+    },
+    "comment-block": {
+      "name": "comment.block.ofan",
+      "begin": "##(?!#)",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.begin.ofan"
+        }
+      },
+      "end": "##",
+      "endCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.end.ofan"
+        }
+      }
+    },
+    "comment-line": {
+      "name": "comment.line.number-sign.ofan",
+      "begin": "#(?!#)",
+      "beginCaptures": {
+        "0": {
+          "name": "punctuation.definition.comment.ofan"
+        }
+      },
+      "end": "$"
+    }
+  }
 }

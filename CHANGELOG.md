@@ -7,3 +7,11 @@ and this project adheres to
 [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
 ## [Unreleased]
+
+### Added
+
+- Syntax highlighting for `#` line comments (`comment.line.number-sign.ofan`) —
+  §1
+- Syntax highlighting for `##...##` block comments (`comment.block.ofan`) — §1
+- Syntax highlighting for `###...###` doc comments
+  (`comment.block.documentation.ofan`) — §1

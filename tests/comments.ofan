@@ -1,0 +1,51 @@
+# SYNTAX TEST "source.ofan" "comments — SYNTAX_SPEC §1"
+
+# ── line comment ─────────────────────────────────────────────────────────────
+
+# this is a line comment
+# <- punctuation.definition.comment.ofan
+# <- comment.line.number-sign.ofan
+#   ^ comment.line.number-sign.ofan
+
+# this line comment contains hash pairs ## inside it
+# <- comment.line.number-sign.ofan
+#                                    ^ comment.line.number-sign.ofan
+#                                    ^ - comment.block.ofan
+
+# ── block comment (single-line) ──────────────────────────────────────────────
+
+## single-line block comment ##
+# <- punctuation.definition.comment.begin.ofan
+# <- comment.block.ofan
+#   ^ comment.block.ofan
+
+# ── block comment (multi-line) ───────────────────────────────────────────────
+
+##
+# <-- punctuation.definition.comment.begin.ofan
+# <-- comment.block.ofan
+block comment interior line
+# <- comment.block.ofan
+##
+# <-- punctuation.definition.comment.end.ofan
+# <-- comment.block.ofan
+
+# ── doc comment (multi-line) ─────────────────────────────────────────────────
+
+###
+# <--- punctuation.definition.comment.begin.ofan
+# <--- comment.block.documentation.ofan
+# <--- - comment.block.ofan
+doc comment interior line
+# <- comment.block.documentation.ofan
+# <- - comment.block.ofan
+###
+# <--- punctuation.definition.comment.end.ofan
+# <--- comment.block.documentation.ofan
+# <--- - comment.block.ofan
+
+# ── // is NOT a comment ───────────────────────────────────────────────────────
+
+// this is not a comment in Ofan
+# <- - comment.line.number-sign.ofan
+# <- - comment.block.ofan
