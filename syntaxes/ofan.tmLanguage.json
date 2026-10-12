@@ -1,0 +1,8 @@
+{
+  "name": "Ofan",
+  "scopeName": "source.ofan",
+  "fileTypes": [
+    "ofan"
+  ],
+  "patterns": []
+}

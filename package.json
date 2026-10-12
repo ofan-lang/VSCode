@@ -1,0 +1,58 @@
+{
+  "name": "ofan",
+  "displayName": "Ofan",
+  "description": "Ofan language support for Visual Studio Code",
+  "version": "0.0.1",
+  "publisher": "ofan-lang",
+  "license": "Apache-2.0",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ofan-lang/VSCode"
+  },
+  "bugs": {
+    "url": "https://github.com/ofan-lang/VSCode/issues"
+  },
+  "categories": [
+    "Programming Languages"
+  ],
+  "keywords": [
+    "ofan",
+    "syntax highlighting"
+  ],
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "contributes": {
+    "languages": [
+      {
+        "id": "ofan",
+        "aliases": [
+          "Ofan"
+        ],
+        "extensions": [
+          ".ofan"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "ofan",
+        "scopeName": "source.ofan",
+        "path": "./syntaxes/ofan.tmLanguage.json"
+      }
+    ]
+  },
+  "scripts": {
+    "build-grammar": "node scripts/build-grammar.js",
+    "lint": "prettier --check \"**/*.{yaml,yml,json,md}\"",
+    "test": "node scripts/test.js",
+    "vscode:prepublish": "npm run build-grammar"
+  },
+  "devDependencies": {
+    "@vscode/vsce": "4.0.0",
+    "js-yaml": "5.4.3",
+    "prettier": "3.9.10",
+    "vscode-tmgrammar-test": "0.1.3"
+  }
+}

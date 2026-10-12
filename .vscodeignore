@@ -1,0 +1,17 @@
+.claude/**
+.editorconfig
+.gitattributes
+.gitignore
+.github/**
+.prettier*
+.vscode/**
+CLAUDE.md
+CODE_OF_CONDUCT.md
+CONTRIBUTING.md
+SECURITY.md
+docs/**
+node_modules/
+package-lock.json
+scripts/**
+syntaxes/ofan.tmLanguage.yaml
+tests/**
