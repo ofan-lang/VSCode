@@ -62,13 +62,14 @@ Git and commit conventions → [docs/GIT_WORKFLOW.md](docs/GIT_WORKFLOW.md)
 ### 1. Choose a task
 
 Browse issues labelled
-[`good first issue`](https://github.com/ofan-lang/VSCode/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22).
-Before starting, verify that the target spec section is marked **Decided** — see
-[step 4 below](#4-confirm-a-section-is-decided).
+[`good first issue`](https://github.com/ofan-lang/VSCode/issues?q=is%3Aissue+is%3Aopen+label%3A%22good+first+issue%22)
+for a starting point. Before claiming one, verify that the target spec section
+is marked **Decided** — see [step 4 below](#4-confirm-a-section-is-decided).
 
-If no `good first issue` is open: follow the issue-first path in
-[docs/METHODOLOGY.md](docs/METHODOLOGY.md) — open an issue with a short proposal
-and wait for the maintainer to confirm scope before branching.
+Every bug fix, feature, or refactor must start from an issue before branching.
+If the work is not yet filed, open an issue with a short proposal and wait for
+the maintainer to confirm scope. See the issue-first rule in
+[docs/METHODOLOGY.md](docs/METHODOLOGY.md).
 
 ### 2. From issue to PR
 

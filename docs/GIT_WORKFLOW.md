@@ -48,14 +48,18 @@ for example `feat/<short-name>`, `fix/<short-name>`, `fix/issue-<N>`,
 
 ## Access model
 
+**Maintainer:** @MYS158.
+
 **Core Team** members have direct push access to `ofan-lang/VSCode` — create
 branches directly in the repo and open PRs from there.
 
 **External contributors** fork `ofan-lang/VSCode` on GitHub, create a branch in
 the fork, and open a PR targeting `main` in the upstream repo.
 
-**`main` is protected** — a PR is required and CI must pass before merge. Branch
-protection settings are maintained by the maintainer.
+**`main` is protected** — a PR is required and CI must pass before merge. The
+maintainer may bypass this protection only for the `docs:` and `chore:`
+direct-to-main exception. Branch protection settings are maintained by the
+maintainer.
 
 ## Claude Code git permissions — what is intentionally absent
 
@@ -75,7 +79,8 @@ in-chat confirmation before Claude Code runs either command.
 
 ## PR conventions
 
-PRs are required for all `feat:` and `fix:` changes. Before opening:
+PRs are required for all changes except `docs:` and `chore:` commits by the
+maintainer. Before opening:
 
 1. Verify the base branch explicitly: `git log --oneline -3 <base>` and confirm
    you are branching from the intended point. Never assume the base — state it
