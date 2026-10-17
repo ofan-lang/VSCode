@@ -58,9 +58,8 @@ the fork, and open a PR targeting `main` in the upstream repo.
 
 **`main` is protected** — a PR is required and CI must pass before merge. The
 maintainer may bypass this protection only for `docs:` and `chore:` commits that
-are not covered by the "Branch + PR is required" list above (i.e., commits that
-do not touch the trigger files). Branch protection settings are maintained by
-the maintainer.
+touch none of the trigger files listed under §Mandatory agent review. Branch
+protection settings are maintained by the maintainer.
 
 ## Claude Code git permissions — what is intentionally absent
 
