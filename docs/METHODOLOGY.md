@@ -5,13 +5,13 @@
 Every non-trivial change follows this sequence:
 
 1. **Plan mode first** — no files written until the plan is approved. Use
-   `EnterPlanMode` in Claude Code. For human contributors: write a short
-   proposal in the PR description before opening a draft PR. Every `feat:`,
-   `fix:`, or `refactor:` change — from any contributor, including Core Team —
-   starts from an issue before branching: use an existing one, or open a new one
-   with a short proposal and wait for the maintainer to confirm scope. `docs:`
-   and `chore:` changes and the maintainer's direct-to-main commits are exempt
-   from the issue-first requirement.
+   `EnterPlanMode` in Claude Code. Every `feat:`, `fix:`, `refactor:`, or
+   `test:` change — from any contributor, including Core Team — starts from an
+   issue before branching: write the proposal there, wait for the maintainer to
+   confirm scope, then open a PR that links it with `Closes #N`. `docs:` and
+   `chore:` changes and the maintainer's direct-to-main commits are exempt from
+   the issue-first requirement; for those, a short proposal in the PR
+   description is enough.
 2. **Small steps with checkpoints** — break larger work into slices with a named
    stop at each milestone. Example: "add keyword rules, stop, show output." Do
    not open a PR that covers two independent slices.

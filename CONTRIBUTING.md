@@ -66,9 +66,10 @@ Browse issues labelled
 for a starting point. Before claiming one, verify that the target spec section
 is marked **Decided** — see [step 4 below](#4-confirm-a-section-is-decided).
 
-Every bug fix, feature, or refactor must start from an issue before branching.
-If the work is not yet filed, open an issue with a short proposal and wait for
-the maintainer to confirm scope. See the issue-first rule in
+Every bug fix, feature, refactor, or test change must start from an issue before
+branching. If the work is not yet filed, open an issue with a short proposal and
+wait for the maintainer to confirm scope. To claim an issue, comment to say you
+are taking it; the maintainer will assign it to you. See the issue-first rule in
 [docs/METHODOLOGY.md](docs/METHODOLOGY.md).
 
 ### 2. From issue to PR
