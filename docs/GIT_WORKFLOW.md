@@ -32,7 +32,9 @@ fix(grammar): correct scope for block comment delimiter
 
 ## Branching model
 
-**Direct-to-main** is acceptable for `docs:` and `chore:` changes.
+**Direct-to-main** is acceptable for `docs:` and `chore:` commits. This applies
+to the maintainer only — Core Team members and external contributors always use
+branch + PR, including for `docs:` and `chore:`.
 
 **Branch + PR is required for:**
 
@@ -40,7 +42,24 @@ fix(grammar): correct scope for block comment delimiter
 - Any change that touches `syntaxes/`, `language-configuration.json`,
   `package.json` (contributes section), or `.github/workflows/`
 
-Branch naming: `feat/<short-name>`, `fix/<short-name>`, `fix/issue-<N>`.
+Branch naming: `<type>/<short-name>` where `<type>` mirrors the commit type —
+for example `feat/<short-name>`, `fix/<short-name>`, `fix/issue-<N>`,
+`docs/<short-name>`, `chore/<short-name>`.
+
+## Access model
+
+**Maintainer:** @MYS158.
+
+**Core Team** members have direct push access to `ofan-lang/VSCode` — create
+branches directly in the repo and open PRs from there.
+
+**External contributors** fork `ofan-lang/VSCode` on GitHub, create a branch in
+the fork, and open a PR targeting `main` in the upstream repo.
+
+**`main` is protected** — a PR is required and CI must pass before merge. The
+maintainer may bypass this protection only for `docs:` and `chore:` commits that
+touch none of the trigger files listed under §Mandatory agent review. Branch
+protection settings are maintained by the maintainer.
 
 ## Claude Code git permissions — what is intentionally absent
 
@@ -60,7 +79,8 @@ in-chat confirmation before Claude Code runs either command.
 
 ## PR conventions
 
-PRs are required for all `feat:` and `fix:` changes. Before opening:
+PRs are required for all changes except `docs:` and `chore:` commits by the
+maintainer. Before opening:
 
 1. Verify the base branch explicitly: `git log --oneline -3 <base>` and confirm
    you are branching from the intended point. Never assume the base — state it
@@ -69,7 +89,8 @@ PRs are required for all `feat:` and `fix:` changes. Before opening:
    if any of the trigger files (see §Mandatory agent review) are touched. Claude
    Code users: the agent definition that automates this is in
    `.claude/agents/extension-pillars-reviewer.md` (maintainer-local, not tracked
-   in the repo).
+   in the repo). Without the local agent: use the manual five-pillar checklist
+   in the [PR template](../.github/pull_request_template.md).
 3. Write a PR description that explains _why_ — it becomes the permanent record
    when `git log` is read months later.
 
@@ -106,6 +127,12 @@ Every PR description must include, at minimum:
    findings against each of the five pillars in
    [docs/PILLARS.md](../docs/PILLARS.md), including "no issues found" if
    applicable. Silence is not an acceptable substitute for confirmation.
+
+### Review and merge
+
+Any Core Team member may review a PR and leave comments — all reviews are
+advisory. Only the maintainer approves PRs for merge and performs the merge
+commit.
 
 ### Merge method
 
