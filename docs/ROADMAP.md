@@ -25,17 +25,17 @@ milestone opens and in each PR description (Pillar 1 — see
 
 ## Not yet specified
 
-The following constructs have no usable spec section at `be58757` and cannot be
+The following constructs have no usable spec section at `cc3049f` and cannot be
 implemented until the spec defines or reconciles them (Pillar 2):
 
 - **§24** — entire section is "Not yet decided — deferred"; out of scope for all
   grammar milestones until individual items graduate to a Decided section.
-- **§25 Traits** — body text says Decided but absent from the Contents table at
-  `be58757` (spec discrepancy; tracking issue `ofan-lang/Ofan#TBD`).
 - **Closures** — the word "closure" does not appear anywhere in SYNTAX_SPEC.md
-  at `be58757`; no spec section exists.
+  at `cc3049f`; no spec section exists. Tracked:
+  [ofan-lang/Ofan#68](https://github.com/ofan-lang/Ofan/issues/68).
 - **Function-call syntax** — no standalone call-expression section; §23 mentions
-  trailing `()` only to disambiguate method calls from field access.
+  trailing `()` only to disambiguate method calls from field access. Tracked:
+  [ofan-lang/Ofan#69](https://github.com/ofan-lang/Ofan/issues/69).
 
 ---
 
@@ -109,10 +109,10 @@ Additionally:
 
 **SYNTAX_SPEC.md SHA:** TBD — pinned when milestone opens.
 
-**Scope** (spec status snapshot at `ofan-lang/Ofan@be58757`; verify at the SHA
+**Scope** (spec status snapshot at `ofan-lang/Ofan@cc3049f`; verify at the SHA
 pinned when milestone opens):
 
-| Section | Topic                    | Spec status at `be58757`                     |
+| Section | Topic                    | Spec status at `cc3049f`                     |
 | ------- | ------------------------ | -------------------------------------------- |
 | §8      | Casting                  | Decided                                      |
 | §16     | Loop syntax              | Decided                                      |
@@ -123,7 +123,7 @@ pinned when milestone opens):
 expression-level constructs that appear inside function bodies, not
 declarations.
 
-Closures and general function-call syntax have no spec section at `be58757` and
+Closures and general function-call syntax have no spec section at `cc3049f` and
 cannot be implemented until the spec adds them (Pillar 2).
 
 **Done when:** same pattern as [M2 — Done when](#m2-done-criterion), applied to
@@ -135,10 +135,10 @@ this milestone's scope.
 
 **SYNTAX_SPEC.md SHA:** TBD — pinned when milestone opens.
 
-**Scope** (spec status snapshot at `ofan-lang/Ofan@be58757`; verify at the SHA
+**Scope** (spec status snapshot at `ofan-lang/Ofan@cc3049f`; verify at the SHA
 pinned when milestone opens):
 
-| Section | Topic                                       | Spec status at `be58757` |
+| Section | Topic                                       | Spec status at `cc3049f` |
 | ------- | ------------------------------------------- | ------------------------ |
 | §5      | Variable declarations                       | Decided                  |
 | §6      | Function declarations                       | Decided                  |
@@ -152,18 +152,14 @@ pinned when milestone opens):
 | §19     | `Option` and `Checked` — types and variants | Decided                  |
 | §20     | Enum declaration syntax                     | Decided                  |
 | §22     | `impl` block syntax                         | Decided                  |
+| §25     | Traits                                      | Decided                  |
 
 §9 (type annotation) is in M4 rather than M3 because `: T` is used primarily in
 function parameters, `let` bindings with type ascription, and struct fields —
 all declaration contexts, not expression contexts.
 
-**Excluded — spec discrepancy:** §25 Traits. Its body text is marked **Decided**
-but it is absent from the Contents table at `be58757`. Pillar 2 requires a
-**Decided** section before any grammar rule targets a construct. Tracking issue:
-`ofan-lang/Ofan#TBD` (to be filed). §25 will be added to M4 once resolved.
-
 Modules (module/import syntax) are in §24 "Not yet decided — deferred" at
-`be58757`; excluded until their spec sections are marked **Decided**.
+`cc3049f`; excluded until their spec sections are marked **Decided**.
 
 **Done when:** same pattern as [M2 — Done when](#m2-done-criterion), applied to
 this milestone's scope.
