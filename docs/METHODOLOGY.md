@@ -6,7 +6,9 @@ Every non-trivial change follows this sequence:
 
 1. **Plan mode first** — no files written until the plan is approved. Use
    `EnterPlanMode` in Claude Code. For human contributors: write a short
-   proposal in the PR description before opening a draft PR.
+   proposal in the PR description before opening a draft PR. If no
+   `good first issue` is open: open an issue with a short proposal first and
+   wait for the maintainer to confirm scope before branching.
 2. **Small steps with checkpoints** — break larger work into slices with a named
    stop at each milestone. Example: "add keyword rules, stop, show output." Do
    not open a PR that covers two independent slices.
@@ -23,17 +25,19 @@ Every non-trivial change follows this sequence:
 Each doc owns one topic. It does not restate content owned by another doc — it
 links.
 
-| Doc                    | Owns                                                                                                     | Does not duplicate                                                          |
-| ---------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
-| `README.md`            | First impression: what the extension provides, requirements, links                                       | Setup details → CONTRIBUTING; syntax reference → ofan-lang/Ofan SYNTAX_SPEC |
-| `CONTRIBUTING.md`      | Dev setup, build/test/lint commands, F5 workflow, pointers to METHODOLOGY and GIT_WORKFLOW               | Commit format → GIT_WORKFLOW; lifecycle → METHODOLOGY                       |
-| `CLAUDE.md`            | Agent-specific rules: project commands, reviewer invocation, plan-mode requirement                       | Commit format → GIT_WORKFLOW; lifecycle → METHODOLOGY                       |
-| `docs/METHODOLOGY.md`  | Feature development lifecycle, doc ownership table, doc update-trigger rules                             | Git mechanics → GIT_WORKFLOW                                                |
-| `docs/GIT_WORKFLOW.md` | Git mechanics: commit format, branching, PR conventions, merge method, mandatory review, branch cleanup  | Lifecycle → METHODOLOGY                                                     |
-| `docs/PILLARS.md`      | The five extension design pillars — public source of truth for what every grammar PR is reviewed against | Agent impl → `.claude/agents/` (maintainer-local)                           |
-| `CHANGELOG.md`         | Release notes in Keep a Changelog format                                                                 | Design decisions → GIT_WORKFLOW/METHODOLOGY                                 |
-| `SECURITY.md`          | Vulnerability reporting policy                                                                           | Standalone                                                                  |
-| `CODE_OF_CONDUCT.md`   | Community standards (Contributor Covenant)                                                               | Standalone                                                                  |
+| Doc                                | Owns                                                                                                     | Does not duplicate                                                          |
+| ---------------------------------- | -------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------- |
+| `README.md`                        | First impression: what the extension provides, requirements, links                                       | Setup details → CONTRIBUTING; syntax reference → ofan-lang/Ofan SYNTAX_SPEC |
+| `CONTRIBUTING.md`                  | Dev setup, build/test/lint commands, F5 workflow, pointers to METHODOLOGY and GIT_WORKFLOW               | Commit format → GIT_WORKFLOW; lifecycle → METHODOLOGY                       |
+| `CLAUDE.md`                        | Agent-specific rules: project commands, reviewer invocation, plan-mode requirement                       | Commit format → GIT_WORKFLOW; lifecycle → METHODOLOGY                       |
+| `docs/METHODOLOGY.md`              | Feature development lifecycle, doc ownership table, doc update-trigger rules                             | Git mechanics → GIT_WORKFLOW                                                |
+| `docs/GIT_WORKFLOW.md`             | Git mechanics: commit format, branching, PR conventions, merge method, mandatory review, branch cleanup  | Lifecycle → METHODOLOGY                                                     |
+| `docs/PILLARS.md`                  | The five extension design pillars — public source of truth for what every grammar PR is reviewed against | Agent impl → `.claude/agents/` (maintainer-local)                           |
+| `docs/ROADMAP.md`                  | Milestone definitions, scope mapping to spec sections, and done criteria                                 | Grammar details → GIT_WORKFLOW; spec status → ofan-lang/Ofan SYNTAX_SPEC    |
+| `.github/pull_request_template.md` | PR description structure and manual five-pillar checklist                                                | PR conventions prose → GIT_WORKFLOW; pillar definitions → PILLARS.md        |
+| `CHANGELOG.md`                     | Release notes in Keep a Changelog format                                                                 | Design decisions → GIT_WORKFLOW/METHODOLOGY                                 |
+| `SECURITY.md`                      | Vulnerability reporting policy                                                                           | Standalone                                                                  |
+| `CODE_OF_CONDUCT.md`               | Community standards (Contributor Covenant)                                                               | Standalone                                                                  |
 
 **The anti-drift rule for README:** README links to authoritative docs rather
 than restating their content. When README content duplicates a doc, the README
